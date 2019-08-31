@@ -1,3 +1,32 @@
+# # %matplotlib inline
+# # 内嵌绘图
+# import seaborn as sns
+# import matplotlib.pyplot as plt
+# import pandas as pd
+# from sklearn.datasets import load_iris
+#
+# iris = load_iris()
+# # 把数据转换成dataframe的格式
+# iris_d = pd.DataFrame(iris['data'], columns = ['Sepal_Length', 'Sepal_Width', 'Petal_Length', 'Petal_Width'])
+# iris_d['Species'] = iris.target
+#
+# def plot_iris(iris, col1, col2):
+#     sns.lmplot(x = col1, y = col2, data = iris, hue = "Species", fit_reg = False)
+#     plt.xlabel(col1)
+#     plt.ylabel(col2)
+#     loc = 'left'
+#     font_dict = {'fontsize': 14,
+#                  'fontweight': 8.2,
+#                  'verticalalignment': 'baseline',
+#                  'horizontalalignment': loc}
+#     plt.title('鸢尾花种类分布图', fontdict=font_dict)
+#     plt.show()
+# plot_iris(iris_d, 'Petal_Width', 'Sepal_Length')
+
+
+
+
+
 # 导包
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -18,6 +47,7 @@ x_test = transfer.transform(x_test)
 
 # 4、机器学习(模型训练)
 estimator = KNeighborsClassifier(n_neighbors=9)
+print('-----', estimator)
 estimator.fit(x_train, y_train)
 # 5、模型评估
 # 方法1：比对真实值和预测值
